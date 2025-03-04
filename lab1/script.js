@@ -66,9 +66,15 @@ function triangle(val1 = 3, type1 = "leg", val2 = 4, type2 = "leg") {
     else {
         return "failed";
     }
+
     if (a <= 0 || b <= 0 || c <= 0 || a + b <= c || a + c <= b || b + c <= a) {
         return "Invalid triangle dimensions";
     }
+
+    if (alpha < 1 || beta < 1) {
+        return "Triangle too degenerate (angle too small)";
+    }
+
     a = Number(a.toFixed(4));
     b = Number(b.toFixed(4));
     c = Number(c.toFixed(4));
