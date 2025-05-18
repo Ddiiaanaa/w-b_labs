@@ -3,15 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const homeLink = document.getElementById("home-link");
     const catalogLink = document.getElementById("catalog-link");
 
-    // Початковий вміст
     function showHome() {
         contentElement.innerHTML = `
             <h1>Ласкаво просимо до каталогу!</h1>
             <p>Оберіть категорію, щоб переглянути товари.</p>
         `;
     }
-
-    // Завантаження каталогу
     function loadCatalog() {
         fetch("data/categories.json")
             .then(response => {
@@ -34,16 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                     categoriesList.appendChild(categoryDiv);
                 });
-
-                // Обробники для категорій
                 document.querySelectorAll(".category-link").forEach(link => {
                     link.addEventListener("click", () => {
                         const shortname = link.getAttribute("data-shortname");
                         loadCategory(shortname);
                     });
                 });
-
-                // Обробник для Specials
                 document.querySelector(".specials-link").addEventListener("click", () => {
                     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
                     loadCategory(randomCategory.shortname);
@@ -55,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // Завантаження товарів категорії
     function loadCategory(shortname) {
         fetch(`data/${shortname}.json`)
             .then(response => {
@@ -89,18 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 contentElement.innerHTML = `<p class="text-danger">Помилка завантаження категорії: ${error.message}</p>`;
             });
     }
-
-    // Обробники навігації
     homeLink.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location.reload(); // Оновлення сторінки
+        window.location.reload();
     });
-
     catalogLink.addEventListener("click", (e) => {
         e.preventDefault();
         loadCatalog();
     });
-
-    // Початкове завантаження
     showHome();
 });
