@@ -1,0 +1,33 @@
+{
+    "categoryName": "Electronics",
+    "items": [
+        {
+            "id": 1,
+            "name": "Smartphone",
+            "shortname": "smartphone",
+            "description": "A high-end smartphone with 128GB storage.",
+            "price": 599.99
+        },
+        {
+            "id": 2,
+            "name": "Laptop",
+            "shortname": "laptop",
+            "description": "Lorem ipsum dolor sit amet.",
+            "price": 999.99
+        },
+        {
+            "id": 3,
+            "name": "Headphones",
+            "shortname": "headphones",
+            "description": "Noise-cancelling wireless headphones.",
+            "price": 199.99
+        },
+        {
+            "id": 4,
+            "name": "Smartwatch",
+            "shortname": "smartwatch",
+            "description": "Fitness tracking smartwatch.",
+            "price": 249.99
+        }
+    ]
+}

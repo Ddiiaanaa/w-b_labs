@@ -1,0 +1,40 @@
+{
+    "categoryName": "Clothing",
+    "items": [
+        {
+            "id": 1,
+            "name": "T-Shirt",
+            "shortname": "tshirt",
+            "description": "Comfortable cotton t-shirt.",
+            "price": 19.99
+        },
+        {
+            "id": 2,
+            "name": "Jeans",
+            "shortname": "jeans",
+            "description": "Lorem ipsum dolor sit amet.",
+            "price": 49.99
+        },
+        {
+            "id": 3,
+            "name": "Jacket",
+            "shortname": "jacket",
+            "description": "Warm winter jacket.",
+            "price": 89.99
+        },
+        {
+            "id": 4,
+            "name": "Sneakers",
+            "shortname": "sneakers",
+            "description": "Stylish running sneakers.",
+            "price": 69.99
+        },
+        {
+            "id": 5,
+            "name": "Scarf",
+            "shortname": "scarf",
+            "description": "Soft wool scarf.",
+            "price": 29.99
+        }
+    ]
+}

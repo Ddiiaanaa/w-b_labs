@@ -1,0 +1,21 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card-img-top {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.category-link, .specials-link {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #007bff;
+}
+
+.category-link:hover, .specials-link:hover {
+    color: #0056b3;
+}
