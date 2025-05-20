@@ -86,27 +86,37 @@ function moveBlock(firstMove = false) {
     block.style.top = top + 'px';
 }
 let countdownInterval;
-function startTimer() {
-    clearTimeout(timerId);
-    clearInterval(countdownInterval); 
 
-    let remainingTime = timeLimit; 
-    updateTimerDisplay(remainingTime);
+function startTimer() {
+    clearTimers();
+
+    let timeLeft = timeLimit / 1000; 
+
+    updateTimerDisplay(timeLeft); 
 
     countdownInterval = setInterval(() => {
-        remainingTime -= 100;
+        timeLeft -= 0.1;
 
-        if (remainingTime <= 0) {
-            clearInterval(countdownInterval);
-            updateTimerDisplay(0); 
+        if (timeLeft <= 0) {
+            updateTimerDisplay(0);
+            clearTimers();
             endGame();
         } else {
-            updateTimerDisplay(remainingTime);
+            updateTimerDisplay(timeLeft);
         }
-    }, 100);
+    }, 100); 
 }
-function updateTimerDisplay(ms) {
-    timerDisplay.textContent = `Час: ${(ms / 1000).toFixed(1)} с`;
+timerId = setTimeout(() => {
+    endGame(); 
+}, timeLimit);
+
+function updateTimerDisplay(t) {
+    timerDisplay.textContent = `Час: ${t.toFixed(1)} с`;
+}
+
+function clearTimers() {
+    clearInterval(countdownInterval);
+    clearTimeout(timerId);
 }
 
 function updateScore() {
