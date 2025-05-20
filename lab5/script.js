@@ -86,15 +86,30 @@ function moveBlock(firstMove = false) {
     block.style.left = left + 'px';
     block.style.top = top + 'px';
 }
-
-
+let countdownInterval;
 function startTimer() {
     clearTimeout(timerId);
-    timerDisplay.textContent = `Час: ${(timeLimit / 1000).toFixed(1)} с`;
+    clearInterval(countdownInterval);
 
+    let remainingTime = timeLimit;
+    updateTimerDisplay(remainingTime);
+
+    countdownInterval = setInterval(() => {
+        remainingTime -= 100;
+        if (remainingTime <= 0) {
+            clearInterval(countdownInterval);
+            endGame();
+        } else {
+            updateTimerDisplay(remainingTime);
+        }
+    }, 100);
     timerId = setTimeout(() => {
+        clearInterval(countdownInterval);
         endGame();
     }, timeLimit);
+}
+function updateTimerDisplay(ms) {
+    timerDisplay.textContent = `Час: ${(ms / 1000).toFixed(1)} с`;
 }
 
 function updateScore() {
