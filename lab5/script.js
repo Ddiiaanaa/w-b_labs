@@ -82,31 +82,28 @@ function moveBlock(firstMove = false) {
             top = Math.min(Math.max(currentTop + deltaY, 0), fieldHeight);
         }
     }
-
     block.style.left = left + 'px';
     block.style.top = top + 'px';
 }
 let countdownInterval;
 function startTimer() {
     clearTimeout(timerId);
-    clearInterval(countdownInterval);
+    clearInterval(countdownInterval); 
 
-    let remainingTime = timeLimit;
+    let remainingTime = timeLimit; 
     updateTimerDisplay(remainingTime);
 
     countdownInterval = setInterval(() => {
         remainingTime -= 100;
+
         if (remainingTime <= 0) {
             clearInterval(countdownInterval);
+            updateTimerDisplay(0); 
             endGame();
         } else {
             updateTimerDisplay(remainingTime);
         }
     }, 100);
-    timerId = setTimeout(() => {
-        clearInterval(countdownInterval);
-        endGame();
-    }, timeLimit);
 }
 function updateTimerDisplay(ms) {
     timerDisplay.textContent = `Час: ${(ms / 1000).toFixed(1)} с`;
