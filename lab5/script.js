@@ -2,6 +2,7 @@ let difficulty, color, timeLimit, moveRange, blockSize;
 let timerId;
 let score = 0;
 let isGameOver = false;
+let countdownInterval;
 
 const startBtn = document.getElementById('start-btn');
 const restartBtn = document.getElementById('restart-btn');
@@ -85,7 +86,6 @@ function moveBlock(firstMove = false) {
     block.style.left = left + 'px';
     block.style.top = top + 'px';
 }
-let countdownInterval;
 
 function startTimer() {
     clearTimers();
@@ -106,9 +106,6 @@ function startTimer() {
         }
     }, 100); 
 }
-timerId = setTimeout(() => {
-    endGame(); 
-}, timeLimit);
 
 function updateTimerDisplay(t) {
     timerDisplay.textContent = `Час: ${t.toFixed(1)} с`;
@@ -134,7 +131,7 @@ block.addEventListener('click', () => {
 
 function endGame() {
     isGameOver = true;
-    clearTimeout(timerId);
+    clearTimers();
     alert(`Гру закінчено! Ви набрали ${score} очків.`);
     block.style.display = 'none';
     restartBtn.style.display = 'inline-block'; 
