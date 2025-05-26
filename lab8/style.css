@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Навігаційне меню */
+.nav-menu {
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-items li {
+    display: flex;
+    align-items: center;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+/* Анімація для меню */
+.menu-items {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Карусель */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333;
+}
+
+/* Зображення */
+.images-large, .images-medium {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.images-large img, .images-medium img {
+    margin: 10px;
+}
+
+/* Адаптивність */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        transform: translateY(-100%);
+    }
+
+    .menu-items.active {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .menu-items li {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .carousel {
+        max-width: 100%;
+    }
+
+    .slide {
+        width: 100%;
+    }
+
+    .images-large {
+        display: none;
+    }
+
+    .images-medium {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .images-large {
+        display: block;
+    }
+
+    .images-medium {
+        display: none;
+    }
+}

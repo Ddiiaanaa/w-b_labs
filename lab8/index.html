@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Page with Effects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="menu-items">
+                <li><span class="icon">🏠</span> <a href="#">Додому</a></li>
+                <li><span class="icon">📸</span> <a href="#">Галерея</a></li>
+                <li><span class="icon">📞</span> <a href="#">Контакти</a></li>
+                <li><span class="icon">ℹ️</span> <a href="#">Про нас</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="carousel">
+            <div class="carousel-slides">
+                <img src="https://place-hold.it/800x400?text=Slide1" class="slide active">
+                <img src="https://place-hold.it/800x400?text=Slide2" class="slide">
+                <img src="https://place-hold.it/800x400?text=Slide3" class="slide">
+                <img src="https://place-hold.it/800x400?text=Slide4" class="slide">
+            </div>
+            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator active" onclick="goToSlide(0)"></span>
+                <span class="indicator" onclick="goToSlide(1)"></span>
+                <span class="indicator" onclick="goToSlide(2)"></span>
+                <span class="indicator" onclick="goToSlide(3)"></span>
+            </div>
+        </section>
+
+        <section class="images-large">
+            <h2>Зображення для Large-пристроїв</h2>
+            <img src="https://place-hold.it/300x200?text=Large1">
+            <img src="https://place-hold.it/300x200?text=Large2">
+            <img src="https://place-hold.it/300x200?text=Large3">
+        </section>
+
+        <section class="images-medium">
+            <h2>Зображення для Medium-пристроїв</h2>
+            <img src="https://place-hold.it/300x200?text=Medium1">
+            <img src="https://place-hold.it/300x200?text=Medium2">
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
