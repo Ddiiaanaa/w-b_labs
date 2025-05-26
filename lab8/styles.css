@@ -3,7 +3,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Навігаційне меню */
 .nav-menu {
     background-color: #333;
     padding: 10px;
@@ -41,12 +40,10 @@ body {
     margin-right: 5px;
 }
 
-/* Анімація для меню */
 .menu-items {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Карусель */
 .carousel {
     position: relative;
     max-width: 800px;
@@ -61,11 +58,6 @@ body {
 
 .slide {
     min-width: 100%;
-    display: none;
-}
-
-.slide.active {
-    display: block;
 }
 
 .carousel-btn {
@@ -106,7 +98,6 @@ body {
     background-color: #333;
 }
 
-/* Зображення */
 .images-large, .images-medium {
     text-align: center;
     margin: 20px 0;
@@ -116,7 +107,6 @@ body {
     margin: 10px;
 }
 
-/* Адаптивність */
 @media (max-width: 767px) {
     .hamburger {
         display: block;
@@ -136,6 +126,7 @@ body {
     .menu-items.active {
         display: flex;
         transform: translateY(0);
+        z-index: 5;
     }
 
     .menu-items li {
